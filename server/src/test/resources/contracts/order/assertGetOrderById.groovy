@@ -14,7 +14,7 @@ Contract.make {
         method 'GET'
         url('/orders/1')
         headers {
-            contentType("application/json")
+            accept("application/json")
         }
     }
     response {

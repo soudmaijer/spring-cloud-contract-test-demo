@@ -8,16 +8,16 @@ import org.springframework.cloud.contract.spec.Contract
 Contract.make {
 
     /**
-     * Request response for a order which does not exist, completes HTTP status code 200 with an empty body
+     * Request response which succeeds, completes HTTP status code 200
      */
     request {
         method 'GET'
-        url('/orders/0')
+        url('/orders/666')
         headers {
-            contentType("application/json")
+            accept("application/json")
         }
     }
     response {
-        status 200
+        status 500
     }
 }
