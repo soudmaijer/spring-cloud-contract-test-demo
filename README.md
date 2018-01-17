@@ -2,11 +2,11 @@
 
 This application demonstrates how to use Spring Cloud Contract for different purposes:
 
-* Defining contracts for APIs
-* Verifying the API implementation against the defined contract
-* Generating stubs for consumers (clients) of an API
-* Using a stub server during consumer (client) tests
-* Using a stub server while running a client locally (not using the real service implementation)
+* Defining contracts for your API
+* Verifying the your API implementation against the defined contracts
+* Generating stubs for consumers (clients) of your API
+* Using a stub server during consumer tests
+* Consumers can run a stub server locally, using your API, without using the real service implementation.
 
 ### Defining the API's behaviour
 
