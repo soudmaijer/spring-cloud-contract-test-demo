@@ -10,9 +10,9 @@ This application demonstrates how to use Spring Cloud Contract for different pur
 
 ### Defining the API's behaviour
 
-By far the most important thing to do is defining the API's behaviour. In Spring Cloud Contract you have different options for defining this.
+By far the most important thing to do is defining the API's behaviour. In Spring Cloud Contract you have different options for defining these contract.
 
-One way of defining the API behaviour is using the Groovy Contract DSL. You need to define the request-response interaction in such a contract dsl.
+One way of doing this is using the Groovy Contract DSL in which you can define request-response interaction using a Groovy DSL.
 
 Example DSL: requesting an order from the server with id=1 should return a response with at least the id fields in the json response.
 
