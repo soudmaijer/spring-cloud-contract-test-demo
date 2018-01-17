@@ -8,6 +8,46 @@ This application demonstrates how to use Spring Cloud Contract for different pur
 * Using a stub server during consumer (client) tests
 * Using a stub server while running a client locally (not using the real service implementation)
 
+### Defining the API's behaviour
+
+By far the most important thing to do is defining the API's behaviour. In Spring Cloud Contract you have different options for defining this.
+
+One way of defining the API behaviour is using the Groovy Contract DSL. You need to define the request-response interaction in such a contract dsl.
+
+Example DSL: requesting an order from the server with id=1 should return a response with at least the id fields in the json response.
+
+```groovy
+package contracts.order
+
+import org.springframework.cloud.contract.spec.Contract
+
+/**
+ * Contract definition, written in a Groovy DSL
+ */
+Contract.make {
+
+    /**
+     * Request response which succeeds, completes HTTP status code 200
+     */
+    request {
+        method 'GET'
+        url('/orders/1')
+        headers {
+            accept("application/json")
+        }
+    }
+    response {
+        status 200
+        body(["id" : 1])
+        headers {
+            contentType(applicationJson())
+        }
+    }
+}
+```
+
+Based on this DSL we can generate unit test for verifying the real API implementation. But also (WireMock) stubs which can be used for running a stub server by consumers of you service.
+
 ### Building the project
 
 You can build the project using maven by executing the following command on top level:
