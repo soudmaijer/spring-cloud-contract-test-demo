@@ -17,11 +17,11 @@ Before getting started, make sure you have some basic understanding about micros
 
 ### Defining the API's behaviour
 
-By far the most important thing to do is defining the API's behaviour. In Spring Cloud Contract you have different options for defining these contract.
+By far the most important thing to do is defining your API's behaviour. In Spring Cloud Contract you have different options for defining contracts that define this behaviour. 
 
-One way of doing this is using the Groovy Contract DSL in which you can define request-response interaction using a Groovy DSL.
+One way of doing this is using the Groovy Contract DSL in which you can define request-response interaction using a Groovy DSL, which is being used in this example application.
 
-Example DSL: requesting an order from the server with id=1 should return a response with at least the id fields in the json response.
+Example Groovy DSL: requesting an order from the server with id=1 should return a response with at least the id fields in the json response.
 
 ```groovy
 package contracts.order
