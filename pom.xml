@@ -3,13 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.bol.spring.cloud.contract.demo</groupId>
-    <artifactId>scc-demo</artifactId>
+    <groupId>nl.sourcelabs.spring.cloud.contract.demo</groupId>
+    <artifactId>consumer-driven-contracts</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>scc-demo</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Demo project for Spring Cloud Contract</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -27,12 +26,24 @@
     </properties>
 
     <modules>
-        <module>server</module>
-        <module>client</module>
+        <module>producer</module>
+        <module>consumer</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>nl.sourcelabs.spring.cloud.contract.demo</groupId>
+                <artifactId>producer</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>nl.sourcelabs.spring.cloud.contract.demo</groupId>
+                <artifactId>producer</artifactId>
+                <classifier>stubs</classifier>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -59,17 +70,6 @@
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
                 <version>2.9.2</version>
-            </dependency>
-            <dependency>
-                <groupId>com.bol.spring.cloud.contract.demo</groupId>
-                <artifactId>server</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.bol.spring.cloud.contract.demo</groupId>
-                <artifactId>server</artifactId>
-                <classifier>stubs</classifier>
-                <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
