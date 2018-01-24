@@ -1,12 +1,19 @@
-## Spring Cloud Contract example application
+## Testing microservices with Spring Cloud Contract
 
-This application demonstrates how to use Spring Cloud Contract for different purposes:
+This application demonstrates how to use Spring Cloud Contract for testing microservices, covering the following topics:
 
 * Defining contracts for your API
 * Verifying the your API implementation against the defined contracts
 * Generating stubs for consumers (clients) of your API
 * Using a stub server during consumer tests
 * Consumers can run a stub server locally, using your API, without using the real service implementation.
+
+Before getting started, make sure you have some basic understanding about microservices and the challenges associated testing them. Some excellent reading material:
+
+* https://martinfowler.com/articles/microservice-testing/
+* https://martinfowler.com/bliki/IntegrationTest.html
+* https://martinfowler.com/articles/consumerDrivenContracts.html
+* https://cloud.spring.io/spring-cloud-contract/
 
 ### Defining the API's behaviour
 
